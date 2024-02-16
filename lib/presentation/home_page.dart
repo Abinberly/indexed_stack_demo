@@ -27,10 +27,11 @@ class HomePage extends StatelessWidget {
             child: Obx(() => IndexedStack(
                   index: controller.selectedIndex,
                   children: controller.pages
-                      .map((page) => Center(child: Text(page)))
+                      .map((page) =>  Center(child: Text( 'Button ${controller.selectedIndex+1}')))
                       .toList(),
                 )),
           ),
+          
         ],
       ),
     );

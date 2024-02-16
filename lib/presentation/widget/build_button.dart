@@ -1,11 +1,16 @@
 
+// ignore_for_file: avoid_print
+
   import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../domain/home_controller.dart';
 
 Widget buildButton(int index,HomeController controller) {
     return GestureDetector(
-      onTap: () => controller.selectedIndex = index,
+      onTap: () {controller.selectedIndex = index;
+      Get.snackbar('Button ${index + 1} tapped', 'Tab ${index + 1}',backgroundColor: Colors.transparent,snackPosition:SnackPosition.BOTTOM);
+      print("Button ${index+1} is Clicked");},
       child: Card(
         elevation: 8,
         color: controller.selectedIndex == index
